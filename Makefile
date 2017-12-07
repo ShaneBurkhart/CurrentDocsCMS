@@ -1,7 +1,6 @@
 .PHONY: logs backup
 
 CONTAINER_NAME=currentdocscms
-DATA_CONTAINER_NAME=currentdocscms_data
 VOLUME_NAME=currentdocscms_volume_web
 BASE_TAG=shaneburkhart/currentdocscms
 
