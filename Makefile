@@ -10,10 +10,10 @@ run:
 	docker run --name ${CONTAINER_NAME} -d -v ${VOLUME_NAME}:/var/www/html -p 80:80 ${BASE_TAG}
 
 stop:
-	docker stop ${CONTAINER_NAME}
+	docker stop ${CONTAINER_NAME} || echo "No container to stop..."
 
 clean: stop
-	docker rm $(docker ps -q)
+	docker rm ${CONTAINER_NAME} || echo "No containers to remove..."
 
 build:
 	docker build -t ${BASE_TAG} .
@@ -23,6 +23,3 @@ logs:
 
 c:
 	docker run --rm -it --volumes-from ${CONTAINER_NAME} ${BASE_TAG} /bin/bash
-
-backup:
-	docker run --volumes-from ${CONTAINER_NAME}:ro -v $(shell pwd)/backup:/backup ${BASE_TAG} cp -r /var/www/html /backup

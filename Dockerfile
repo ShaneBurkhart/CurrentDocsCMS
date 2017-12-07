@@ -3,7 +3,7 @@ MAINTAINER Shane Burkhart <shaneburkhart@gmail.com>
 
 RUN apt-get update -y && apt-get install -y libpng-dev
 
-ADD . /var/www/html/
+COPY . /var/www/html/
 RUN chown -R www-data /var/www/html/*
 
 RUN a2enmod rewrite
