@@ -8,7 +8,7 @@ BASE_TAG=shaneburkhart/currentdocscms
 all: run
 
 run:
-	docker run --name ${DATA_CONTAINER_NAME} -v ${VOLUME_NAME}:/var/www/html ubuntu true || true
+	docker run --name ${DATA_CONTAINER_NAME} -v ${VOLUME_NAME}:/var/www/html ${BASE_TAG} true || true
 	docker run --name ${CONTAINER_NAME} -d --volumes-from ${DATA_CONTAINER_NAME} -p 80:80 ${BASE_TAG} || true
 
 stop:
