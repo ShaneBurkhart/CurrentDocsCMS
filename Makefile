@@ -18,4 +18,4 @@ logs:
 	docker logs ${CONTAINER_NAME}
 
 c:
-	docker run --rm -it ${BASE_TAG} /bin/bash
+	docker run --rm -it -v $(shell pwd):/var/www/html ${BASE_TAG} /bin/bash
