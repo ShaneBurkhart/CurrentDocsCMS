@@ -11,6 +11,8 @@ RUN a2enmod rewrite
 RUN docker-php-ext-install zip
 RUN docker-php-ext-install gd
 
+USER www-data
+
 RUN bin/gpm selfupgrade -f
 RUN bin/gpm install admin
 
