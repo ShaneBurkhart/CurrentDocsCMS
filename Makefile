@@ -6,7 +6,7 @@ BASE_TAG=shaneburkhart/currentdocscms
 all: run
 
 run:
-	docker run --name ${CONTAINER_NAME} -d --rm -p 80:80 ${BASE_TAG}
+	docker run --name ${CONTAINER_NAME} -d --rm -v $(shell pwd):/var/www/html -p 80:80 ${BASE_TAG}
 
 stop:
 	docker stop ${CONTAINER_NAME}
