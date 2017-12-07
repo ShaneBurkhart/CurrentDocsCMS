@@ -16,4 +16,6 @@ USER www-data
 RUN bin/gpm selfupgrade -f
 RUN bin/gpm install admin
 
+USER root
+
 EXPOSE 80

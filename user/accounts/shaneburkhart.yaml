@@ -1,8 +1,0 @@
-password: 'password'
-email: 'shane@currentdocs.com'
-fullname: 'Shane Burkhart'
-title: 'Site Administrator'
-access:
-  admin:
-    login: true
-    super: true
